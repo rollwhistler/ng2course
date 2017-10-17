@@ -1,3 +1,5 @@
-<div [ngStyle]="customStyles">
-    <ng-content></ng-content>
+<div *ngFor="let indef of arrNumCopies" [ngStyle]="customStyles">
+    Abans
+    <ng-content select="img"></ng-content>
+    Després
 </div>

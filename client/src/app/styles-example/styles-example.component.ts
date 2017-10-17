@@ -7,6 +7,9 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class StylesExampleComponent implements OnInit {
   @Input() borderColor: string;
+  @Input() replicate: number;
+  arrNumCopies: number[];
+
   customStyles: any;
 
   constructor() { }
@@ -15,5 +18,6 @@ export class StylesExampleComponent implements OnInit {
     this.customStyles = {
       border: "2px solid " + this.borderColor
     };
+    this.arrNumCopies = Array(this.replicate);
   }
 }
