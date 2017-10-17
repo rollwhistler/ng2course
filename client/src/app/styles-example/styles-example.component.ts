@@ -19,5 +19,8 @@ export class StylesExampleComponent implements OnInit {
       border: "2px solid " + this.borderColor
     };
     this.arrNumCopies = Array(this.replicate);
+    for (let i = 0; i < this.arrNumCopies.length; i++) {
+      this.arrNumCopies[i] = i;
+    }
   }
 }

@@ -1,5 +1,14 @@
-<div *ngFor="let indef of arrNumCopies" [ngStyle]="customStyles">
-    Abans
-    <ng-content select="img"></ng-content>
+<div *ngFor="let item of arrNumCopies; let i=index" [ngStyle]="customStyles">
+    <div [ngSwitch]="item">
+        <div *ngSwitchCase="0">
+            <ng-content select=".img0"></ng-content>
+        </div>
+        <div *ngSwitchCase="1">
+            <ng-content select=".img1"></ng-content>
+        </div>
+        <div *ngSwitchCase="2">
+            <ng-content select=".img2"></ng-content>
+        </div>
+    </div>
     Després
 </div>
