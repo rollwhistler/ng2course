@@ -17,7 +17,7 @@ export class ChildviewExampleComponent implements OnInit {
   }
 
   keyUp(event) {
-    const height = event.target.offsetHeight;
+    const height = event.target.scrollHeight;
     if (height !== this.currentHeight) {
       this.currentHeight = height;
       this.onChange.emit(true);
