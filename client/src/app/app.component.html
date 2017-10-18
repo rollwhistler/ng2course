@@ -5,5 +5,10 @@
     </h1>
 
 </div>
-<app-childview-example initial="Ola K ase" (onChange)="newHeight()"></app-childview-example>
+
+<button (click)="alterInput()">Alter Input</button>
+
+<app-childview-example [initial]="initial" (onChange)="newHeight()">
+    <img src="https://udemy-images.udemy.com/course/750x422/1184020_5fe8_2.jpg" />
+</app-childview-example>
 Current Height: {{currentHeight}}
