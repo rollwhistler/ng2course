@@ -1,4 +1,6 @@
-<form [formGroup]="coolForm"><input formControlName="search" placeholder="Search Doctors"></form>
+<form [formGroup]="coolForm">
+    <input formControlName="search" placeholder="Search Doctors">
+</form>
 
 <div *ngFor="let doctor of result">
     {{doctor.name}}
