@@ -3,7 +3,7 @@ import { HttpRequest, HttpResponse } from '@angular/common/http';
 
 @Injectable()
 export class CacheService {
-  cachedRequests: {};
+  cachedRequests: any = {};
 
   constructor() { }
 

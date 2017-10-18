@@ -5,8 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DoctorsModule } from './modules/doctors/doctors.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { AppComponent } from './app.component';
-
-
+import { CacheInterceptor } from './modules/shared/interceptors/cache.interceptor';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    SharedModule,
+    SharedModule.forRoot(),
     DoctorsModule
   ],
   providers: [],
