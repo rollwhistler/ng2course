@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { DoctorInterface } from './interfaces';
-import { SearchService } from './search.service';
+import { DoctorInterface } from '../modules/doctors/models/interfaces';
+import { SearchService } from '../modules/doctors/services/search.service';
 import 'rxjs/add/operator/retry';
 import 'rxjs/Rx';
 

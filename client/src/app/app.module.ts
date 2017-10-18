@@ -2,9 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DoctorsModule } from '../modules/doctors/doctors.module';
 import { AppComponent } from './app.component';
 
-import { SearchService } from './search.service';
+
 
 @NgModule({
   declarations: [
@@ -13,9 +14,10 @@ import { SearchService } from './search.service';
   imports: [
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DoctorsModule
   ],
-  providers: [SearchService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
