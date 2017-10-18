@@ -6,6 +6,8 @@ import { UserManagementComponent } from './components/smart/user-management/user
 import { UserAddComponent } from './components/dumb/user-add/user-add.component';
 import { ItemsListComponent } from './components/dumb/items-list/items-list.component';
 
+import { UserService } from './services/user.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,7 @@ import { ItemsListComponent } from './components/dumb/items-list/items-list.comp
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
