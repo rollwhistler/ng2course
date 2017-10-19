@@ -1,18 +1,17 @@
 import { HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-class CacheResponse {
-  timestamp: number;
-  response: HttpResponse<any>;
-}
-
 @Injectable()
 export class CacheService {
 
-  objCache: CacheResponse[] = [];
-  expiracyTime: number = 3600000;
+  objCache: any = {};
+  expiracyTime: number = 5000;
 
-  constructor() { }
+  constructor() {
+    this.objCache = JSON.parse(localStorage.getItem('cacheResponses'));
+    console.log(this.objCache);
+    if (!this.objCache) this.objCache = {};
+  }
 
   get(url) {
     let cachedResponse = this.objCache[url];
@@ -29,5 +28,7 @@ export class CacheService {
       timestamp: new Date().getTime(),
       response: response
     }
+    console.log("Obj Cache: " + JSON.stringify(this.objCache));
+    localStorage.setItem('cacheResponses', JSON.stringify(this.objCache));
   }
 }
