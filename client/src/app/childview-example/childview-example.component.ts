@@ -12,8 +12,10 @@ export class ChildviewExampleComponent implements OnInit, OnChanges, DoCheck, Af
   @Input() initial: string;
   @Output() onChange: EventEmitter<boolean> = new EventEmitter<boolean>();
   public currentHeight: number;
+  public testChanges: number = 1;
 
   constructor(public textRef: ElementRef) { }
+
 
   //Respond when Angular (re)sets data-bound input properties. The method receives a SimpleChanges object of current and previous property values.
   ngOnChanges(e) {
@@ -25,11 +27,12 @@ export class ChildviewExampleComponent implements OnInit, OnChanges, DoCheck, Af
   ngOnInit() {
     this.currentHeight = 0;
     console.log("On Init");
+    
   }
 
   //Detect and act upon changes that Angular can't or won't detect on its own.
   ngDoCheck() {
-    console.log("Do Check");
+    console.log("Do Check: "+this.testChanges);
   }
 
   //Respond after Angular projects external content into the component's view.
