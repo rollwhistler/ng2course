@@ -14,6 +14,7 @@ export class UserAddComponent {
   keyup(event: any) {
     if (event.keyCode == 13) {
       this.onAddUser.emit(event.target.value);
+      event.target.value = "";
     }
   }
 
