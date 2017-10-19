@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { UserManagementComponent } from './components/smart/user-management/user-management.component';
 import { UserAddComponent } from './components/dumb/user-add/user-add.component';
@@ -13,10 +13,12 @@ import { UserService } from './services/user.service';
     AppComponent,
     UserManagementComponent,
     UserAddComponent,
-    ItemsListComponent
+    ItemsListComponent,
+    
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-<app-user-add (onAddUser)="addUser($event)">
+<app-user-add (onAddUser)="addUser($event)" *ngIf="ready">
 </app-user-add>
 
 <app-items-list [items]="users" (onRemoveItem)="removeUser($event)"></app-items-list>

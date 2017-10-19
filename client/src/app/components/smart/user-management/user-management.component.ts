@@ -9,11 +9,16 @@ import { UserService } from '../../../services/user.service';
 export class UserManagementComponent implements OnInit {
 
   users: string[] = [];
-
+  ready: boolean = false;
+  
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.users = this.userService.get();
+    this.ready = false;
+    this.userService.get().subscribe((users)=>{
+      this.users = users;
+      this.ready = true;
+    });
   }
 
   addUser(username) {

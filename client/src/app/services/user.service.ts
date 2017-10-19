@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class UserService {
 
-  constructor() { }
+  constructor(public http: HttpClient) { }
 
-  get(): string[] {
-    let users = JSON.parse(window.localStorage.getItem("user-list"));
-    if (!users) users = [];
-    return users;
+  get(): Observable<Array<string>> {
+    return <Observable<Array<string>>> this.http.get("https://ng2course-4e083.firebaseio.com/users.json");
   }
 
   set(users: string[]) {
-    window.localStorage.setItem("user-list", JSON.stringify(users));
+    this.http.put("https://ng2course-4e083.firebaseio.com/users.json", users)
+    .subscribe((res)=>{console.log(res)}, (e)=>console.log(e));
   }
 }
