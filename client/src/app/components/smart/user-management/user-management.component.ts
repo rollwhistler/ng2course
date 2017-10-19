@@ -20,11 +20,12 @@ export class UserManagementComponent implements OnInit {
       id: this.getNextUserId(),
       name: username
     }
-    this.users.push(user);
+    this.users = this.users.concat([user]);
   }
 
   removeUser(index) {
     this.users.splice(index, 1);
+    this.users = this.users.concat([]);
   }
 
   getNextUserId() {
@@ -38,9 +39,16 @@ export class UserManagementComponent implements OnInit {
   }
 
   setAllJordi() {
+
+    let newUsers = [];
     for (let i = 0; i < this.users.length; i++) {
-      this.users[i].name = "Jordi"
+      newUsers.push({
+        id: this.users[i].id,
+        name: "Jordi"
+      });
     }
+    this.users = newUsers;
+
   }
 
 }
