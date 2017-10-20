@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { UserManagementComponent } from './components/smart/user-management/user-management.component';
 import { UserAddComponent } from './components/dumb/user-add/user-add.component';
 import { ItemsListComponent } from './components/dumb/items-list/items-list.component';
+import { MyCapitalizeDirective } from './directives/my-capitalize.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserManagementComponent,
     UserAddComponent,
-    ItemsListComponent
+    ItemsListComponent,
+    MyCapitalizeDirective
   ],
   imports: [
     BrowserModule
