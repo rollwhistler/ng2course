@@ -6,6 +6,7 @@ import { UserManagementComponent } from './components/smart/user-management/user
 import { UserAddComponent } from './components/dumb/user-add/user-add.component';
 import { ItemsListComponent } from './components/dumb/items-list/items-list.component';
 import { MyCapitalizeDirective } from './directives/my-capitalize.directive';
+import { DelayDirective } from './directives/delay.directive';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { MyCapitalizeDirective } from './directives/my-capitalize.directive';
     UserManagementComponent,
     UserAddComponent,
     ItemsListComponent,
-    MyCapitalizeDirective
+    MyCapitalizeDirective,
+    DelayDirective
   ],
   imports: [
     BrowserModule
