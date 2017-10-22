@@ -1,34 +1,54 @@
 <div class="container">
     <h1>User Form</h1>
-    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" novalidate>
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" formControlName="name" #name>
+            <input type="text" class="form-control" id="name" formControlName="name" required>
             <div [hidden]="name.valid || !name.touched" class="alert alert-danger">
-                Name is required
+                <div [hidden]="!name.errors?.required">
+                    Name is required.
+                </div>
+                <div [hidden]="!name.errors?.forbiddenName">
+                    Name cannot be Jordi.
+                </div>
             </div>
-            <p>name = {{userForm.value?.name}}</p>
         </div>
 
         <div class="form-group">
             <label for="lastname">Last Name</label>
-            <input type="text" class="form-control" id="lastname" formControlName="lastname" #lastname>
-            <div [hidden]="lastname.valid || !lastname.touched" class="alert alert-danger">
-                lastname is required
+            <input type="text" class="form-control" id="lastname" formControlName="lastname" required>
+            <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="alert alert-danger">
+                <div *ngIf="lastname.errors.required">
+                    lastname is required.
+                </div>
             </div>
-            <p>lastname = {{userForm.value?.lastname}}</p>
         </div>
 
         <div class="form-group">
             <label for="role">User Role</label>
-            <select class="form-control" id="role" formControlName="roleId" #roleId>
-        <option *ngFor="let role of roles" [value]="role.id">{{role.name}}</option>
-      </select>
-            <p>roleId = {{userForm.value?.roleId}}</p>
-            <p>{{roleId.className}}</p>
+            <select class="form-control" id="role" formControlName="roleId" required>
+              <option *ngFor="let role of roles" [value]="role.id">{{role.name}}</option>
+            </select>
+        </div>
+
+        <div formArrayName="addresses" class="well well-lg">
+            <div *ngFor="let address of addresses.controls; let i=index" [formGroupName]="i">
+                <h4>Address #{{i + 1}}</h4><button type="button" class="btn btn-secondary " (click)="removeAddress(i)">Remove</button>
+                <div class="form-group">
+                    <label for="street">Street</label>
+                    <input type="text" class="form-control" id="street" formControlName="street">
+                </div>
+                <div class="form-group">
+                    <label for="zipcode">Zip Code</label>
+                    <input type="text" class="form-control" id="zipcode" formControlName="zipcode">
+                </div>
+            </div>
         </div>
         <button type="submit" class="btn btn-success" [disabled]="!userForm.valid">Submit</button>
-        <button class="btn btn-danger" (click)="userForm.reset()">Clear</button>
+        <button type="button" class="btn btn-danger" (click)="reset()">Clear</button>
+        <button type="button" class="btn btn-secondary " (click)="prepopulate()">Pre-Populate</button>
+        <button type="button" class="btn btn-secondary " (click)="forceName('Ramon')">Set Name</button>
+        <button type="button" class="btn btn-secondary " (click)="addAddress()">Add Address</button>
         <p>Form Value: {{userForm.value | json}}</p>
         <p>Form Status: {{userForm.status | json}}</p>
     </form>
