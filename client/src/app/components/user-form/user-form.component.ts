@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User, UserRole, UserRoleFactory, forbiddenNameValidator } from '../../models/user';
-import { FormGroup, FormControl, Validator, Validators, FormBuilder } from '@angular/forms';
+import { FormArray, FormGroup, FormControl, Validator, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-user-form',
@@ -40,6 +40,17 @@ export class UserFormComponent implements OnInit {
     });
   };
 
+  removeAddress(index: number) {
+    this.addresses.slice(index, 1);
+  }
+
+  addAddress() {
+    this.addresses.push(this.fb.group({
+      street: this.fb.control(''),
+      zipcode: this.fb.control('')
+    }))
+  }
+
   get name(){
     return this.userForm.get('name');
   }
@@ -52,8 +63,8 @@ export class UserFormComponent implements OnInit {
     return this.userForm.get('roleId');
   }
 
-  get addresses(){
-    return this.userForm.get('addresses');
+  get addresses(): FormArray{
+    return this.userForm.get('addresses') as FormArray;
   }
 
   submit(form) {
