@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SimpleService } from '../../../shared/services/simple.service';
 
 @Component({
   selector: 'app-book-edit',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookEditComponent implements OnInit {
 
-  constructor() { }
+  constructor(public simpleService: SimpleService) { }
 
   ngOnInit() {
   }
 
+  updated($event) {
+    this.simpleService.upsert($event);
+    window.history.back();
+  }
 }

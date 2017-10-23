@@ -15,5 +15,6 @@ export class UserEditComponent implements OnInit {
 
   updated($event) {
     this.simpleService.upsert($event);
+    window.history.back();
   }
 }

@@ -10,7 +10,8 @@ import { BookEditComponent } from './components/book-edit/book-edit.component';
     CommonModule,
     SharedModule,
     RouterModule.forChild([
-      { path: '', component: BooksListComponent }
+      { path: '', component: BooksListComponent, pathMatch: 'full' },
+      { path: 'book-edit/:id', component: BookEditComponent },
     ])
   ],
   declarations: [BooksListComponent, BookEditComponent]

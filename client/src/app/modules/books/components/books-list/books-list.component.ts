@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListItem } from '../../../shared/models/list-item';
+import { SimpleService } from '../../../shared/services/simple.service';
 
 @Component({
   selector: 'app-books-list',
@@ -7,27 +8,10 @@ import { ListItem } from '../../../shared/models/list-item';
   styleUrls: ['./books-list.component.css']
 })
 export class BooksListComponent implements OnInit {
-  books: ListItem[];
+  public books: ListItem[];
 
-  constructor() {
-    this.books = [
-      {
-        id: 1,
-        name: "Juego de Tronos"
-      }, {
-        id: 2,
-        name: "Choque de Reyes"
-      }, {
-        id: 3,
-        name: "Tormenta de espadas"
-      }, {
-        id: 4,
-        name: "Festín de cuervos"
-      }, {
-        id: 5,
-        name: "Danza de dragones"
-      }
-    ]
+  constructor(public simpleService: SimpleService) {
+    this.books = this.simpleService.getAll();
   }
 
   ngOnInit() {

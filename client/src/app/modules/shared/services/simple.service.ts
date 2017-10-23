@@ -27,7 +27,7 @@ export class SimpleService {
 
   getNextId() {
     let maxId = 1;
-    for (let i = 0; this.items.length; i++) {
+    for (let i = 0; i < this.items.length; i++) {
       if (this.items[i].id > maxId) {
         maxId = this.items[i].id + 1;
       }
