@@ -1,0 +1,8 @@
+<form #userForm="ngForm" (ngSubmit)="submit(userForm)">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input class="form-control" name="name" id="name" required/>
+    </div>
+
+    <button [disabled]="userForm.invalid" class="btn btn-primary">Submit</button>
+</form>
