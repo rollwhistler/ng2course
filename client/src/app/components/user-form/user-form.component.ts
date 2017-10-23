@@ -41,7 +41,7 @@ export class UserFormComponent implements OnInit {
   };
 
   removeAddress(index: number) {
-    this.addresses.slice(index, 1);
+    this.addresses.removeAt(index);
   }
 
   addAddress() {
@@ -49,6 +49,21 @@ export class UserFormComponent implements OnInit {
       street: this.fb.control(''),
       zipcode: this.fb.control('')
     }))
+  }
+
+  setValues() {
+    /*this.userForm.setValue({
+      name: 'Miquel',
+      lastname: 'Iceta',
+      roleId: 3,
+      addresses: [{
+        street: 'Inopia, 13',
+        zipcode: '08666'
+      }]
+    });*/
+    this.addresses.controls[0].patchValue({
+      zipcode: '66666'
+    })
   }
 
   get name(){
