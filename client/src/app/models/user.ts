@@ -1,7 +1,15 @@
+import { ValidatorFn, AbstractControl } from '@angular/forms';
+
 export class User {
     name: string;
     lastname: string;
     roleId: number;
+    addresses: Address[]
+}
+
+export class Address {
+    street: string;
+    zipcode: string;
 }
 
 export class UserRole {
@@ -24,3 +32,10 @@ export class UserRoleFactory {
         
     }
 }
+
+export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
+    return (control: AbstractControl): {[key: string]: any} => {
+      const forbidden = nameRe.test(control.value);
+      return forbidden ? {'forbiddenName': {value: control.value}} : null;
+    };
+  }

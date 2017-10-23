@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User, UserRole, UserRoleFactory } from '../../models/user';
+import { User, UserRole, UserRoleFactory, forbiddenNameValidator } from '../../models/user';
+import { FormGroup, FormControl, Validator, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-user-form',
@@ -7,16 +8,27 @@ import { User, UserRole, UserRoleFactory } from '../../models/user';
   styleUrls: ['./user-form.component.css']
 })
 export class UserFormComponent implements OnInit {
-  public model: User = {
-    name: '',
-    lastname: '',
-    roleId: null
-  }
+  public userForm: FormGroup; 
   public userRoles: UserRole[] = new UserRoleFactory().getDefaultUserRoles();
+  public user: User;
 
-  constructor() { 
+  constructor(public fb: FormBuilder) { 
+    this.user = {
+      name: 'Ramon',
+      lastname: 'Smith',
+      roleId: 3,
+      addresses: [{
+        street: 'Rosselló',
+        zipcode: '08034'
+      }]
+    }
 
+    this.createForm();
   }
+
+  createForm() {
+    
+  };
 
   submit(form) {
     console.log(form);
@@ -24,5 +36,6 @@ export class UserFormComponent implements OnInit {
 
   ngOnInit() {
   }
+
 
 }

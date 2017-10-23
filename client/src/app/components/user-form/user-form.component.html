@@ -1,30 +1,17 @@
-<form #userForm="ngForm" (ngSubmit)="submit(userForm)">
+<form [formGroup]="userForm" (ngSubmit)="submit()">
     <div class="form-group">
         <label for="name">Name</label>
-        <input class="form-control" #userName forbiddenName="Jordi" [(ngModel)]="model.name" name="name" id="name" required/>
-        <div [hidden]="userForm.controls.name?.valid || userForm.controls.name?.errors?.forbiddenName || userForm.controls.name?.untouched" class="alert alert-danger">
-            User is required
-        </div>
-        <div [hidden]="userForm.controls.name?.valid || userForm.controls.name?.errors?.required || userForm.controls.name?.untouched" class="alert alert-danger">
-            This user name is forbidden by the constitution
-        </div>
-        {{userForm.controls.name?.errors | json}}<br/> {{ userForm.controls.name?.valid }}
+        <input class="form-control" formControlName="name" name="name" id="name" required/>
     </div>
     <div class="form-group">
         <label for="name">Last Name</label>
-        <input class="form-control" #lastName [(ngModel)]="model.lastname" name="lastname" id="lastname" required/>
-        <div [hidden]="userForm.controls.lastname?.valid || userForm.controls.lastname?.untouched" class="alert alert-danger">
-            Last Name is required
-        </div>
+        <input class="form-control" formControlName="lastname" name="lastname" id="lastname" required/>
     </div>
     <div class="form-group">
         <label for="roleId">User Role</label>
-        <select id="roleId" name="roleId" #roleId class="form-control" [(ngModel)]="model.roleId" required>
+        <select id="roleId" name="roleId" formControlName="roleId" class="form-control" required>
           <option *ngFor="let role of userRoles" [value]="role.id">{{role.name}}</option>
         </select>
-        <div [hidden]="userForm.controls.roleId?.valid || userForm.controls.roleId?.untouched" class="alert alert-danger">
-            User role is required
-        </div>
     </div>
-    <button [disabled]="userForm.form.invalid" class="btn btn-primary">Submit</button> {{ model | json}}
+    <button [disabled]="userForm.invalid" class="btn btn-primary">Submit</button> {{ userForm.value | json}} {{ userForm.status }}
 </form>
