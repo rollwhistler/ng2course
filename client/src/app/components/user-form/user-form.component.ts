@@ -31,9 +31,12 @@ export class UserFormComponent implements OnInit {
       name: this.fb.control(this.user.name, [Validators.required, forbiddenNameValidator(/Jordi/i)]),
       lastname: this.fb.control(this.user.lastname, Validators.required),
       roleId: this.fb.control(this.user.roleId, Validators.required),
-      addresses: this.user.addresses.map((address) => {
-        this.fb.array.
-      })
+      addresses: this.fb.array(this.user.addresses.map((address) => {
+        return this.fb.group({
+          street: this.fb.control(address.street),
+          zipcode: this.fb.control(address.zipcode)
+        })
+      }))
     });
   };
 
