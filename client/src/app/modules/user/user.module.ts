@@ -3,15 +3,17 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { SharedModule } from '../shared/shared.module';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
     RouterModule.forChild([
-      { path: '', component: UsersListComponent }
+      { path: '', component: UsersListComponent, pathMatch: 'full' },
+      { path: 'user-edit/:id', component: UserEditComponent }
     ])
   ],
-  declarations: [UsersListComponent]
+  declarations: [UsersListComponent, UserEditComponent]
 })
 export class UserModule { }

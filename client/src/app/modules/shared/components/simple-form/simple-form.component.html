@@ -1,0 +1,8 @@
+<div class="container">
+    <form [formGroup]="simpleForm" (submit)="submit()">
+        <div class="form-group">
+            <label for="name">Name: </label>
+            <input type="text" formControlName="name" id="name" (keyup)="keyUp($event)" />
+        </div>
+    </form>
+</div>

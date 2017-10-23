@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ListItem } from '../../shared/models/list-item';
+import { ListItem } from '../../../shared/models/list-item';
 
 @Component({
   selector: 'app-books-list',

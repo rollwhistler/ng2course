@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListItem } from '../../../shared/models/list-item';
+import { SimpleService } from '../../../shared/services/simple.service';
 
 @Component({
   selector: 'app-users-list',
@@ -10,28 +11,15 @@ export class UsersListComponent implements OnInit {
 
   public users: ListItem[];
 
-  constructor() {
-    this.users = [
-      {
-        id: 1,
-        name: "Mariano Rajoy"
-      }, {
-        id: 2,
-        name: "Albert Rivera"
-      }, {
-        id: 3,
-        name: "Pedro Sánchez"
-      }, {
-        id: 4,
-        name: "Pablo Iglesias"
-      }, {
-        id: 5,
-        name: "Gabrial Rufián"
-      }
-    ]
+  constructor(public simpleService: SimpleService) {
+    this.users = this.simpleService.getAll();
   }
 
   ngOnInit() {
+  }
+
+  update(model: ListItem) {
+    this.simpleService.upsert(model);
   }
 
 }
