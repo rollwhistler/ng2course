@@ -40,6 +40,22 @@ export class UserFormComponent implements OnInit {
     });
   };
 
+  get name(){
+    return this.userForm.get('name');
+  }
+
+  get lastname(){
+    return this.userForm.get('lastname');
+  }
+
+  get roleId(){
+    return this.userForm.get('roleId');
+  }
+
+  get addresses(){
+    return this.userForm.get('addresses');
+  }
+
   submit(form) {
     console.log(form);
   }

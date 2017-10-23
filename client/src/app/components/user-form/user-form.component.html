@@ -1,7 +1,7 @@
 <form [formGroup]="userForm" (ngSubmit)="submit()">
     <div class="form-group">
         <label for="name">Name</label>
-        <input class="form-control" formControlName="name" name="name" id="name" required/>
+        <input class="form-control" formControlName="name" name="name" id="name" required/> {{ name.errors | json}}
     </div>
     <div class="form-group">
         <label for="name">Last Name</label>
@@ -13,5 +13,18 @@
           <option *ngFor="let role of userRoles" [value]="role.id">{{role.name}}</option>
         </select>
     </div>
+
+    <div *ngFor="let address of addresses; let i = index">
+        <div class="form-group">
+            <label for="street">Street</label>
+            <input class="form-control" formControlName="street" name="street" id="street" />
+        </div>
+        <div class="form-group">
+            <label for="zipcode">Zip Code</label>
+            <input class="form-control" formControlName="zipcode" name="zipcode" id="zipcode" />
+        </div>
+    </div>
+
+
     <button [disabled]="userForm.invalid" class="btn btn-primary">Submit</button> {{ userForm.value | json}} {{ userForm.status }}
 </form>
