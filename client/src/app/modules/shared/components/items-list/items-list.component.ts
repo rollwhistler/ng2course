@@ -14,4 +14,8 @@ export class ItemsListComponent implements OnInit {
   ngOnInit() {
   }
 
+  click(item) {
+    this.onClick.emit(item);
+  }
+
 }

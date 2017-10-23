@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./users-list.component.css']
 })
 export class UsersListComponent implements OnInit {
-
   public users: ListItem[];
 
   constructor(public simpleService: SimpleService, public router: Router) {
@@ -19,11 +18,7 @@ export class UsersListComponent implements OnInit {
   ngOnInit() {
   }
 
-  update(model: ListItem) {
-    this.simpleService.upsert(model);
-  }
-
   edit(item: ListItem) {
-    this.router.navigate(['user-edit', item.id]);
+    this.router.navigate(['/users/user-edit', item.id]);
   }
 }

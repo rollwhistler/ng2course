@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SimpleService } from '../../../shared/services/simple.service';
 import { ActivatedRoute } from '@angular/router';
 import { ListItem } from '../../../shared/models/list-item';
@@ -8,11 +8,12 @@ import { ListItem } from '../../../shared/models/list-item';
   templateUrl: './user-edit.component.html',
   styleUrls: ['./user-edit.component.css']
 })
-export class UserEditComponent implements OnInit, OnDestroy {
-  public sub: any;
+export class UserEditComponent implements OnInit {
   public user: ListItem;
+  public sub: any;
 
   constructor(public simpleService: SimpleService, public route: ActivatedRoute) { }
+
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {

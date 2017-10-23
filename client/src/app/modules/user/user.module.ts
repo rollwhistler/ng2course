@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { UsersListComponent } from './components/users-list/users-list.component';
 import { SharedModule } from '../shared/shared.module';
+import { UsersListComponent } from './components/users-list/users-list.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 @NgModule({
@@ -15,5 +15,6 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     ])
   ],
   declarations: [UsersListComponent, UserEditComponent]
+
 })
 export class UserModule { }
