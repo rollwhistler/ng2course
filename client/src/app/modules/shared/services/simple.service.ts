@@ -17,7 +17,9 @@ export class SimpleService {
     if (model.id) {
       for (let i = 0; i < this.items.length; i++) {
         let item = this.items[i];
-        item.name = model.name;
+        if (item.id === model.id) {
+          item.name = model.name;
+        }
       }
     } else {
       model.id = this.getNextId();
@@ -35,4 +37,20 @@ export class SimpleService {
     return maxId;
   }
 
+  get(id: number): ListItem {
+    let item = {
+      id: null,
+      name: ''
+    }
+
+    if (id) {
+      for (let i = 0; i < this.items.length; i++) {
+        let current = this.items[i];
+        if (current.id === id) {
+          return current;
+        }
+      }
+    }
+    return item;
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ListItem } from '../../models/list-item';
 
 @Component({
@@ -7,7 +7,7 @@ import { ListItem } from '../../models/list-item';
   styleUrls: ['./items-list.component.css']
 })
 export class ItemsListComponent implements OnInit {
-
+  @Output() onClick: EventEmitter<ListItem> = new EventEmitter<ListItem>();
   @Input() items: ListItem[];
   constructor() { }
 
