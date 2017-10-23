@@ -19,6 +19,6 @@ export class UsersListComponent implements OnInit {
   }
 
   edit(item: ListItem) {
-    this.router.navigate(['/users/user-edit', item.id]);
+    this.router.navigate(['/users/user-edit', item.id], { queryParams: { title: 'User Edit!' } });
   }
 }

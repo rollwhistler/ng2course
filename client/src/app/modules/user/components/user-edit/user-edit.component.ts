@@ -10,7 +10,9 @@ import { ListItem } from '../../../shared/models/list-item';
 })
 export class UserEditComponent implements OnInit {
   public user: ListItem;
+  public title: string = '';
   public sub: any;
+  public subQuery: any;
 
   constructor(public simpleService: SimpleService, public route: ActivatedRoute) { }
 
@@ -18,6 +20,10 @@ export class UserEditComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.user = this.simpleService.get(+params['id']);
+    });
+
+    this.subQuery = this.route.queryParams.subscribe(params => {
+      this.title = params['title'];
     });
   }
 
@@ -28,5 +34,6 @@ export class UserEditComponent implements OnInit {
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+    this.subQuery.unsubscribe();
   }
 }
