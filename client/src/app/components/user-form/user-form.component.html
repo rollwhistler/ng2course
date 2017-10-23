@@ -13,15 +13,16 @@
           <option *ngFor="let role of userRoles" [value]="role.id">{{role.name}}</option>
         </select>
     </div>
-
-    <div *ngFor="let address of addresses; let i = index">
-        <div class="form-group">
-            <label for="street">Street</label>
-            <input class="form-control" formControlName="street" name="street" id="street" />
-        </div>
-        <div class="form-group">
-            <label for="zipcode">Zip Code</label>
-            <input class="form-control" formControlName="zipcode" name="zipcode" id="zipcode" />
+    <div formArrayName="addresses" class="well well-lg">
+        <div *ngFor="let address of addresses.controls; let i = index">
+            <div class="form-group">
+                <label for="street">Street</label>
+                <input class="form-control" formControlName="address.street" name="street" id="street" />
+            </div>
+            <div class="form-group">
+                <label for="zipcode">Zip Code</label>
+                <input class="form-control" formControlName="address.zipcode" name="zipcode" id="zipcode" />
+            </div>
         </div>
     </div>
 
