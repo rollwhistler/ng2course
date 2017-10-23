@@ -27,7 +27,14 @@ export class UserFormComponent implements OnInit {
   }
 
   createForm() {
-    
+    this.userForm = this.fb.group({
+      name: this.fb.control(this.user.name, [Validators.required, forbiddenNameValidator(/Jordi/i)]),
+      lastname: this.fb.control(this.user.lastname, Validators.required),
+      roleId: this.fb.control(this.user.roleId, Validators.required),
+      addresses: this.user.addresses.map((address) => {
+        this.fb.array.
+      })
+    });
   };
 
   submit(form) {
