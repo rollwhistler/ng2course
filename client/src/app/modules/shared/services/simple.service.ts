@@ -1,0 +1,41 @@
+import { Injectable } from '@angular/core';
+import { ListItem } from '../models/item';
+
+@Injectable()
+export class SimpleService {
+  
+  public items: ListItem[] = [];
+
+  constructor() { }
+
+  getAll() {
+    return this.items;
+  }
+
+  get(id: number) {
+    let item = this.items.find((el) => {
+      return el.id == id;
+    })
+    return item;
+  }
+
+  getNextId() {
+    return this.items.reduce((max, current)=>{
+      if (max <= current.id) max = current.id + 1;
+      return max;
+    }, 1);
+  }
+
+  upsert(item: ListItem) {
+    for (let i=0; i < this.items.length; i++) {
+      let current = this.items[i];
+      if (current.id === item.id) {
+        current.name = item.name;
+        return;
+      }
+    }
+    item.id = this.getNextId();
+    this.items.push(item);
+  }
+
+}
