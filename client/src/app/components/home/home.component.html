@@ -6,29 +6,22 @@
             <!--/i18n-->
             <img src="https://pbs.twimg.com/profile_images/829960966/bookcase_400x400.png" i18n-title="Home page book logo title@@HomeLogoTitle" title="Book Logo" />
             <!-- i18n: Welcome Text|Welcome text in home page@@HomeWelcomeText -->
-            Hello
-            <!-- /i18n -->
-            <!-- i18n: Welcome Text Dynamic|Welcome text Dynamic in home page@@HomeWelcomeDynamicText -->
-            {bitches, plural, =0 {no bitches} =1 {one bitch} =2 {two bitches} other {a bitch pack}}
+            Hello {bitches, plural, =0 {no bitches} =1 {one bitch} =2 {two bitches} other {a bitch pack}}
             <!-- /i18n -->
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <span i18n="User gender@@HomeUserGender">Current user is</span>
-            <!-- i18n: User gender Dynamic|User gender Dynamic in home page@@HomeGenderDynamic -->
-            {gender, select, m {male} f {female}}
-            <!-- /i18n -->
+            <span i18n="User gender@@HomeUserGender">Current user is {gender, select, m {male} f {female}}
+      </span>
         </div>
     </div>
     <div class="row">
         <div class="col">
             <span i18n="Rest of users info in home page@@HomeUsersInfo">
-        Here we have:
+        Here we have: {users.length, plural, =0 {no one} =1 {one {gender, select, m {man} f {woman}}} other {{{users.length}} {gender,
+        select, m {men} f {women}}} }
       </span>
-            <!-- i18n: Rest of Users Dynamic|Rest of Users Dynamic in home page@@HomeUsersDynamicInfo -->
-            {users.length, plural, =0 {no one} =1 {one {gender, select, m {man} f {woman}}} other {{{users.length}} {gender, select, m {men} f {women}}} }
-            <!-- /i18n -->
         </div>
     </div>
     <div class="row">

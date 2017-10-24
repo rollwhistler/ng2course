@@ -29,14 +29,13 @@
   <msg id="HomeWelcomeText" desc="Welcome text in home page" meaning="Welcome Text"><source>src\app\components\home\home.component.ts:8,10</source>
             Hello <ph name="ICU"><ex>ICU</ex></ph>
             </msg>
-  <msg id="HomeUserGender" desc="User gender"><source>src\app\components\home\home.component.ts:14,16</source>
-            Current user is <ph name="ICU"><ex>ICU</ex></ph>
-        </msg>
+  <msg id="HomeUserGender" desc="User gender"><source>src\app\components\home\home.component.ts:15,16</source>Current user is <ph name="ICU"><ex>ICU</ex></ph>
+      </msg>
   <msg id="5868084092545682515"><source>src\app\components\home\home.component.ts:15</source>{VAR_SELECT, select, m {male} f {female} }</msg>
-  <msg id="HomeUsersInfo" desc="Rest of users info in home page"><source>src\app\components\home\home.component.ts:19,21</source>
-            Here we have: <ph name="ICU"><ex>ICU</ex></ph>
-        </msg>
-  <msg id="6553092020475884948"><source>src\app\components\home\home.component.ts:20</source>{VAR_PLURAL, plural, =0 {no one} =1 {one {VAR_SELECT, select, m {man} f {woman} }} other {<ph name="INTERPOLATION"><ex>INTERPOLATION</ex></ph> {VAR_SELECT_1, select, m {men} f {women} }} }</msg>
+  <msg id="HomeUsersInfo" desc="Rest of users info in home page"><source>src\app\components\home\home.component.ts:21,24</source>
+        Here we have: <ph name="ICU"><ex>ICU</ex></ph>
+      </msg>
+  <msg id="6553092020475884948"><source>src\app\components\home\home.component.ts:22,23</source>{VAR_PLURAL, plural, =0 {no one} =1 {one {VAR_SELECT, select, m {man} f {woman} }} other {<ph name="INTERPOLATION"><ex>INTERPOLATION</ex></ph> {VAR_SELECT_1, select, m {men} f {women} }} }</msg>
   <msg id="BookListTitle" desc="Book list page title"><source>src\app\modules\books\components\books-list\books-list.component.ts:1</source>Books List</msg>
   <msg id="BookListCreateButton" desc="Create new book button"><source>src\app\modules\books\components\books-list\books-list.component.ts:2</source>Create New</msg>
   <msg id="UserListTitle" desc="User List page title"><source>src\app\modules\user\components\users-list\users-list.component.ts:1</source>User List</msg>

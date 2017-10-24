@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE translationbundle [
+<!ELEMENT translationbundle (translation)*>
+<!ATTLIST translationbundle lang CDATA #REQUIRED>
+
+<!ELEMENT translation (#PCDATA|ph)*>
+<!ATTLIST translation id CDATA #REQUIRED>
+<!ATTLIST translation desc CDATA #IMPLIED>
+<!ATTLIST translation meaning CDATA #IMPLIED>
+<!ATTLIST translation xml:space (default|preserve) "default">
+
+<!ELEMENT ph (#PCDATA|ex)*>
+<!ATTLIST ph name CDATA #REQUIRED>
+
+<!ELEMENT ex (#PCDATA)>
+]>
+<translationbundle lang="ca">
+  <translation id="HomeText" desc="Home text" meaning="Home text">Benvingut a casa</translation>
+  <translation id="HomeLogoTitle" desc="Home page book logo title">Logo del llibre</translation>
+  <translation id="4688347429626090133">{VAR_PLURAL, plural, =0 {ninguna perra} =1 {una perra} =2 {dos perras} other {un puñao de perras} }</translation>
+  <translation id="HomeWelcomeText" desc="Welcome text in home page" meaning="Welcome Text">Hola</translation>
+  <translation id="HomeUserGender" desc="User gender">El Usuario actual es</translation>
+  <translation id="5868084092545682515">{VAR_SELECT, select, m {tio} f {tia} }</translation>
+  <translation id="HomeUsersInfo" desc="Rest of users info in home page">Aquí tenemos:</translation>
+  <translation id="6553092020475884948">{VAR_PLURAL, plural, =0 {a nadie} =1 {{VAR_SELECT, select, m {un hombre} f {una mujer} }} other {
+    <ph name="INTERPOLATION">
+      <ex>INTERPOLATION</ex>
+    </ph> {VAR_SELECT_1, select, m {unos hombres} f {unas mujeres} }} }</translation>
+  <translation id="BookListTitle" desc="Book list page title">Lista de libros</translation>
+  <translation id="BookListCreateButton" desc="Create new book button">Crear nuevo</translation>
+  <translation id="UserListTitle" desc="User List page title">Lista de usuarios</translation>
+  <translation id="UserListCreateButton" desc="Create new user button">Crear nuevo</translation>
+</translationbundle>
