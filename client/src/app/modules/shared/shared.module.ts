@@ -4,14 +4,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ItemsListComponent } from './components/items-list/items-list.component';
 import { SimpleFormComponent } from './components/simple-form/simple-form.component';
 import { SimpleService } from './services/simple.service';
-
+import { RouterModule } from '@angular/router';
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forChild([])
   ],
   declarations: [ItemsListComponent, SimpleFormComponent],
   providers: [SimpleService],
-  exports:[ItemsListComponent, SimpleFormComponent]
+  exports:[ItemsListComponent, SimpleFormComponent, RouterModule]
 })
 export class SharedModule { }
