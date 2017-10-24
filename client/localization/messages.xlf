@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="HomeText" datatype="html">
+        <source>
+            Welcome Home!
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src\app\components\home\home.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">Home text</note>
+        <note priority="1" from="meaning">Home text</note>
+      </trans-unit>
+      <trans-unit id="HomeLogoTitle" datatype="html">
+        <source>Book Logo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src\app\components\home\home.component.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">Home page book logo title</note>
+      </trans-unit>
+      <trans-unit id="HomeWelcomeText" datatype="html">
+        <source>
+            Hello
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src\app\components\home\home.component.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Welcome text in home page</note>
+        <note priority="1" from="meaning">Welcome Text</note>
+      </trans-unit>
+      <trans-unit id="0f1f8062b0de456554fb4f1d5cac66061354fcb3" datatype="html">
+        <source>{VAR_PLURAL, plural, =0 {no bitches} =1 {one bitch} =2 {two bitches} other {a bitch pack} }</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src\app\components\home\home.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="HomeWelcomeDynamicText" datatype="html">
+        <source>
+            <x id="ICU"/>
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src\app\components\home\home.component.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">Welcome text Dynamic in home page</note>
+        <note priority="1" from="meaning">Welcome Text Dynamic</note>
+      </trans-unit>
+      <trans-unit id="HomeUserGender" datatype="html">
+        <source>Current user is</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src\app\components\home\home.component.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">User gender</note>
+      </trans-unit>
+      <trans-unit id="14c7055d67771a3b7b6888d282ac092896be06b6" datatype="html">
+        <source>{VAR_SELECT, select, m {male} f {female} }</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src\app\components\home\home.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="HomeGenderDynamic" datatype="html">
+        <source>
+            <x id="ICU"/>
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src\app\components\home\home.component.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">User gender Dynamic in home page</note>
+        <note priority="1" from="meaning">User gender Dynamic</note>
+      </trans-unit>
+      <trans-unit id="HomeUsersInfo" datatype="html">
+        <source>
+        Here we have:
+      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src\app\components\home\home.component.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <note priority="1" from="description">Rest of users info in home page</note>
+      </trans-unit>
+      <trans-unit id="2cd49cf1c27d3db203dc70759f378c2bf16777ec" datatype="html">
+        <source>{VAR_PLURAL, plural, =0 {no one} =1 {one {VAR_SELECT, select, m {man} f {woman} }} other {<x id="INTERPOLATION"/> {VAR_SELECT_1, select, m {men} f {women} }} }</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src\app\components\home\home.component.ts</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="HomeUsersDynamicInfo" datatype="html">
+        <source>
+            <x id="ICU"/>
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src\app\components\home\home.component.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <note priority="1" from="description">Rest of Users Dynamic in home page</note>
+        <note priority="1" from="meaning">Rest of Users Dynamic</note>
+      </trans-unit>
+      <trans-unit id="BookListTitle" datatype="html">
+        <source>Books List</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src\app\modules\books\components\books-list\books-list.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Book list page title</note>
+      </trans-unit>
+      <trans-unit id="BookListCreateButton" datatype="html">
+        <source>Create New</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src\app\modules\books\components\books-list\books-list.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Create new book button</note>
+      </trans-unit>
+      <trans-unit id="UserListTitle" datatype="html">
+        <source>User List</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src\app\modules\user\components\users-list\users-list.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">User List page title</note>
+      </trans-unit>
+      <trans-unit id="UserListCreateButton" datatype="html">
+        <source>Create New</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src\app\modules\user\components\users-list\users-list.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Create new user button</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
