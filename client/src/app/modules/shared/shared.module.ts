@@ -7,6 +7,7 @@ import { LoggedinGuard } from './guards/loggedin.guard';
 import { counterReducer } from './models/counter';
 import { StoreModule } from '@ngrx/store';
 import { CounterComponent } from './components/counter/counter.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   imports: [
@@ -19,7 +20,10 @@ import { CounterComponent } from './components/counter/counter.component';
      * the existing state.
      */
     //StoreModule.forFeature('items', reducers),
-    StoreModule.forRoot({ 'counter': counterReducer })
+    StoreModule.forRoot({ 'counter': counterReducer }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25 //  Retains last 25 states
+    })
 
   ],
   declarations: [CounterComponent],
