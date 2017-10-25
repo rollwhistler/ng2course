@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ListItem } from '../../models/item';
 
 @Component({
@@ -7,8 +7,14 @@ import { ListItem } from '../../models/item';
   styleUrls: ['./items-list.component.css']
 })
 export class ItemsListComponent implements OnInit {
+  
   @Input() items: ListItem[];
+  @Output() onUpdated: EventEmitter<ListItem> = new EventEmitter<ListItem>();
   constructor() { }
+
+  click(index: number) {
+    this.onUpdated.emit(this.items[index]);
+  }
 
   ngOnInit() {
   }

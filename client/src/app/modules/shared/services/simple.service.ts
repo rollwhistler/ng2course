@@ -16,6 +16,14 @@ export class SimpleService {
     let item = this.items.find((el) => {
       return el.id == id;
     })
+
+    if (!item) {
+      item = {
+        id: null,
+        name: ''
+      }
+    }
+    
     return item;
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ListItem } from '../../../shared/models/item';
 import { SimpleService } from '../../../shared/services/simple.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-list',
@@ -9,8 +10,12 @@ import { SimpleService } from '../../../shared/services/simple.service';
 })
 export class BookListComponent implements OnInit {
   public books: ListItem[];
-  constructor(public ss: SimpleService) { 
+  constructor(public ss: SimpleService, public router: Router) { 
     
+  }
+
+  update(item: ListItem) {
+    this.router.navigate(['/book-edit', item.id]);
   }
 
   ngOnInit() {
