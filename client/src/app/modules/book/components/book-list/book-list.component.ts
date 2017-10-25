@@ -15,7 +15,7 @@ export class BookListComponent implements OnInit {
   }
 
   update(item: ListItem) {
-    this.router.navigate(['/book-edit', item.id]);
+    this.router.navigate(['/books/book-edit', item.id]);
   }
 
   ngOnInit() {

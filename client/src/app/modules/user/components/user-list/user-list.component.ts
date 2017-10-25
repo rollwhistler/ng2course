@@ -15,7 +15,7 @@ export class UserListComponent implements OnInit {
   }
 
   update(item: ListItem) {
-    this.router.navigate(['/user-edit', item.id]);
+    this.router.navigate(['/users/user-edit', item.id]);
   }
   
   ngOnInit() {  
