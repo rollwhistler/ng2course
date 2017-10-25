@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserEditComponent implements OnInit {
   item: ListItem;
+  title: string = "User Edit";
 
   constructor(public ss: SimpleService, public route: ActivatedRoute) {
     this.item = {
@@ -22,6 +23,11 @@ export class UserEditComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.item = this.ss.get(+params.id);
     });
+
+    this.route.queryParams.subscribe((params) => {
+      if(params.title) this.title = params.title;
+    });
+
   }
 
   updated(item: ListItem) {

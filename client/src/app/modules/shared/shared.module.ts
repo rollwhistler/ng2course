@@ -5,6 +5,7 @@ import { ItemsListComponent } from './components/items-list/items-list.component
 import { SimpleFormComponent } from './components/simple-form/simple-form.component';
 import { SimpleService } from './services/simple.service';
 import { LoggedService } from './services/logged.service';
+import { LoggedinGuard } from './guards/loggedin.guard';
 
 @NgModule({
   imports: [
@@ -15,4 +16,11 @@ import { LoggedService } from './services/logged.service';
   providers: [SimpleService],
   exports:[ItemsListComponent, SimpleFormComponent]
 })
-export class SharedModule { }
+export class SharedModule { 
+    static forRoot() {
+    return {
+      ngModule: SharedModule,
+      providers: [LoggedService, LoggedinGuard]
+    }
+  }
+}

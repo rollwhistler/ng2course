@@ -12,11 +12,13 @@ import { UserEditComponent } from './modules/user/components/user-edit/user-edit
 import { BookEditComponent } from './modules/book/components/book-edit/book-edit.component';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { HomeComponent } from './components/home/home.component';
+import { SharedModule } from './modules/shared/shared.module';
+import { LoggedinGuard } from './modules/shared/guards/loggedin.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'users', loadChildren: 'app/modules/user/user.module#UserModule'},
-  {path: 'books', loadChildren: 'app/modules/book/book.module#BookModule'}
+  {path: 'users', loadChildren: 'app/modules/user/user.module#UserModule', canActivate: [LoggedinGuard]},
+  {path: 'books', loadChildren: 'app/modules/book/book.module#BookModule', canActivate: [LoggedinGuard]}
 ]
 
 @NgModule({
@@ -28,6 +30,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
+    SharedModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
