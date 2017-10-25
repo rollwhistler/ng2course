@@ -11,6 +11,7 @@ import { RouterModule, Routes } from '@angular/router';
     SharedModule,
     RouterModule.forChild([
       { path: '', component: UserListComponent, pathMatch: 'full' },
+      { path: 'user-edit', component: UserEditComponent, pathMatch:"full"},
       { path: 'user-edit/:id', component: UserEditComponent}
     ])
   ],
