@@ -4,6 +4,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ItemsListComponent } from './components/items-list/items-list.component';
 import { SimpleFormComponent } from './components/simple-form/simple-form.component';
 import { SimpleService } from './services/simple.service';
+import { LoggedService } from './services/logged.service';
+
 @NgModule({
   imports: [
     CommonModule,

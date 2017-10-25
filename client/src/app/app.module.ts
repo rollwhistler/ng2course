@@ -27,8 +27,6 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    UserModule,
-    BookModule,
     RouterModule.forRoot(routes),
   ],
   providers: [],
