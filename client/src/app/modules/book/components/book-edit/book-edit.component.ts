@@ -16,6 +16,7 @@ export class BookEditComponent implements OnInit {
 
   updated(item: ListItem) {
     this.ss.upsert(item);
+    window.history.back();
   }
 
 }

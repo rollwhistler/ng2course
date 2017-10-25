@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListItem } from '../../../shared/models/item';
+import { SimpleService } from '../../../shared/services/simple.service';
 
 @Component({
   selector: 'app-user-list',
@@ -9,14 +10,11 @@ import { ListItem } from '../../../shared/models/item';
 export class UserListComponent implements OnInit {
   public users: ListItem[];
 
-  constructor() {
-    this.users = [{
-      id: 1,
-      name: "Primo de Rivera"
-    }]
+  constructor(public ss: SimpleService) {
    }
 
   ngOnInit() {  
+    this.users = this.ss.getAll();
   }
 
 }

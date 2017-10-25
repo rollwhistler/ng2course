@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ListItem } from '../../../shared/models/item';
+import { SimpleService } from '../../../shared/services/simple.service';
+
 @Component({
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
@@ -7,14 +9,12 @@ import { ListItem } from '../../../shared/models/item';
 })
 export class BookListComponent implements OnInit {
   public books: ListItem[];
-  constructor() { 
-    this.books = [{
-      id: 1,
-      name: "Cincuenta sombras de grey"
-    }]
+  constructor(public ss: SimpleService) { 
+    
   }
 
   ngOnInit() {
+    this.books = this.ss.getAll();
   }
 
 }
