@@ -15,8 +15,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes),
-    SharedModule
+    SharedModule,
+    RouterModule.forChild(routes)
   ],
   declarations: [UserListComponent, UserEditComponent],
   exports: [UserListComponent]
