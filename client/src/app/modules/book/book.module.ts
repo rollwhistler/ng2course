@@ -5,18 +5,14 @@ import { SharedModule } from '../shared/shared.module';
 import { BookEditComponent } from './components/book-edit/book-edit.component';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [
-  {path: '', redirectTo: 'book-list', pathMatch:"full"},
-  {path: 'book-list', component: BookListComponent},
-  {path: 'book-edit/:id', component: BookEditComponent}
-]
-
-
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild([
+      { path: '', component: BookListComponent, pathMatch: 'full' },
+      { path: 'book-edit/:id', component: BookEditComponent}
+    ])
   ],
   declarations: [BookListComponent, BookEditComponent],
   exports: [BookListComponent]

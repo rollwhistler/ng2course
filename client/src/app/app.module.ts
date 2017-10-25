@@ -14,7 +14,7 @@ import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent, pathMatch: 'full'},
+  {path: '', component: HomeComponent},
   {path: 'users', loadChildren: 'app/modules/user/user.module#UserModule'},
   {path: 'books', loadChildren: 'app/modules/book/book.module#BookModule'}
 ]
@@ -27,9 +27,9 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
     UserModule,
-    BookModule
+    BookModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent]
