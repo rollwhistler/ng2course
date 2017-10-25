@@ -19,6 +19,7 @@ import { CounterComponent } from './components/counter/counter.component';
      * the existing state.
      */
     //StoreModule.forFeature('items', reducers),
+    StoreModule.forRoot({ 'counter': counterReducer })
 
   ],
   declarations: [CounterComponent],

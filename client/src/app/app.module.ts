@@ -26,7 +26,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    StoreModule.forRoot({ 'counter': counterReducer }),
+    //StoreModule.forRoot({ 'counter': counterReducer }),
     SharedModule.forRoot()
   ],
   providers: [],
