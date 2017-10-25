@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ItemsListComponent } from './components/items-list/items-list.component';
-import { SimpleFormComponent } from './components/simple-form/simple-form.component';
-import { SimpleService } from './services/simple.service';
+import { CounterService } from './services/counter.service';
 import { LoggedService } from './services/logged.service';
 import { LoggedinGuard } from './guards/loggedin.guard';
-import { reducers } from './reducers';
 import { counterReducer } from './models/counter';
 import { StoreModule } from '@ngrx/store';
+import { CounterComponent } from './components/counter/counter.component';
 
 @NgModule({
   imports: [
@@ -21,11 +19,11 @@ import { StoreModule } from '@ngrx/store';
      * the existing state.
      */
     //StoreModule.forFeature('items', reducers),
-    StoreModule.forFeature('shared', { 'counter': counterReducer }),
+
   ],
-  declarations: [ItemsListComponent, SimpleFormComponent],
-  providers: [SimpleService],
-  exports: [ItemsListComponent, SimpleFormComponent]
+  declarations: [CounterComponent],
+  providers: [CounterService],
+  exports: [CounterComponent]
 })
 export class SharedModule {
   static forRoot() {

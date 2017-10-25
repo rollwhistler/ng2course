@@ -1,20 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BookListComponent } from './components/book-list/book-list.component';
 import { SharedModule } from '../shared/shared.module';
-import { BookEditComponent } from './components/book-edit/book-edit.component';
 import { RouterModule, Routes } from '@angular/router';
+import { CounterComponent } from './components/counter/counter.component';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
     RouterModule.forChild([
-      { path: '', component: BookListComponent, pathMatch: 'full' },
-      { path: 'book-edit/:id', component: BookEditComponent}
+      { path: '', component: CounterComponent, pathMatch: 'full' }
     ])
   ],
-  declarations: [BookListComponent, BookEditComponent],
-  exports: [BookListComponent]
+  declarations: [CounterComponent],
+  exports: []
 })
 export class BookModule { }
