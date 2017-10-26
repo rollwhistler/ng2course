@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { UsersListComponent } from './users-list.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ItemsListComponent } from '../../../shared/components/items-list/items-list.component';
+import { SimpleService } from '../../../shared/services/simple.service';
 
 describe('UsersListComponent', () => {
   let component: UsersListComponent;
@@ -8,9 +10,11 @@ describe('UsersListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UsersListComponent ]
+      imports: [RouterTestingModule],
+      declarations: [UsersListComponent, ItemsListComponent],
+      providers: [SimpleService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

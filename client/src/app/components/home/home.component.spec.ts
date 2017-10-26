@@ -1,6 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { LogginService } from '../../services/loggin.service';
 import { HomeComponent } from './home.component';
+
+let logginServiceStub = {
+  isLogged: true,
+  get: () => { },
+  set: () => { }
+};
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -8,9 +14,10 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [HomeComponent],
+      providers: [{ provide: LogginService, useValue: logginServiceStub }]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

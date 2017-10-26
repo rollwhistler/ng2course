@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { BookEditComponent } from './book-edit.component';
+import { SimpleFormComponent } from '../../../shared/components/simple-form/simple-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SimpleService } from '../../../shared/services/simple.service';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('BookEditComponent', () => {
   let component: BookEditComponent;
@@ -8,9 +11,11 @@ describe('BookEditComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BookEditComponent ]
+      imports: [ReactiveFormsModule, RouterTestingModule],
+      declarations: [BookEditComponent, SimpleFormComponent],
+      providers: [SimpleService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
